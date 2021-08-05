@@ -1,0 +1,40 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              11/01/2018 17:18:03 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: F:\Cai phan mem\Keil C 8051\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRIN
+                    -T(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1                  
+   2                   
+   3          #include<regx52.h>
+   4          sfr P2 = 0xFF; 
+*** ERROR C231 IN LINE 4 OF main.c: 'P2': redefinition
+   5          sbit RELAY_PIN = P2^6;
+   6          
+   7          
+   8          
+   9          
+  10          void Delay_ms(unsigned int t)     
+  11          {
+  12   1          unsigned int x,y;             
+  13   1          for (x=0; x<t; x++) 
+  14   1          {   
+  15   2               for (y=0; y<123; y++);   
+  16   2          }
+  17   1      }
+  18          
+  19          void main()
+  20          { 
+  21   1        
+  22   1           while(1) 
+  23   1           {
+  24   2              RELAY_PIN = ~RELAY_PIN;
+  25   2              Delay_ms(1000);
+  26   2           }
+  27   1      }      
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
